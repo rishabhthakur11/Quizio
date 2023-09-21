@@ -45,9 +45,14 @@ const EamilForm: FC<Props> = () => {
   };
   return (
     <div className="flex flex-col md:gap-16 gap-5  rounded-md shadow-lg">
-      <Text className="inline-block max-w-max text-3xl md:text-5xl font-bold text-center bg-gradient-to-r from-[#7F7FD5] to-[#91EAE4] bg-clip-text text-transparent">
-        Welcome, To Quizio
-      </Text>
+      <div className="flex flex-col gap-3 items-center">
+        <Text className="inline-block max-w-max text-3xl md:text-5xl font-bold text-center bg-gradient-to-r from-[#7F7FD5] to-[#91EAE4] bg-clip-text text-transparent">
+          Welcome, To Quizio
+        </Text>
+        <Text className="inline-block max-w-max text-md font-normal text-center text-dark">
+          Test your knowledge and win exciting prizes, with Quizio.
+        </Text>
+      </div>
       <form
         onSubmit={handleSubmit(onSubmitReady)}
         className="flex w-full flex-col gap-5"

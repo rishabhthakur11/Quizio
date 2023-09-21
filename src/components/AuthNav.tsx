@@ -5,7 +5,6 @@ import Link from "next/link";
 interface AuthNavProps {}
 
 const AuthNav: FC<AuthNavProps> = ({}) => {
-
   return (
     <>
       <div className="flex flex-1">
@@ -14,11 +13,12 @@ const AuthNav: FC<AuthNavProps> = ({}) => {
         </h1>
       </div>
       <div className="flex flex-1 items-center justify-end">
-        <Link className="flex gap-5 items-center " href={"/"}>
-          <Button
-            variant="primary"
-            title={"Contact Us"}
-          />
+        <Link
+          target="_blank"
+          className="flex gap-5 items-center "
+          href={"https://www.linkedin.com/in/rishabhthakur11"}
+        >
+          <Button variant="primary" title={"Contact Us"} />
         </Link>
       </div>
     </>

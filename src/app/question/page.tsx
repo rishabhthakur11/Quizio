@@ -2,19 +2,19 @@
 import React, { FC, useEffect, useState } from "react";
 import { useQuiz } from "@/context/QuizContext";
 import { useTimer } from "@/hooks/index";
-import { ScreenTypes } from "../../types";
 import Button from "@/components/ui/Button";
 import ModalWrapper from "@/components/ui/ModelWrapper";
 import Question from "./Questions";
 import QuizHeader from "./QuizHeader";
 import CheckIcon from "@mui/icons-material/Check";
 import AccessAlarmIcon from "@mui/icons-material/AccessAlarm";
+import { useRouter } from "next/navigation";
 
 const QuestionScreen: FC = () => {
   const [selectedAnswer, setSelectedAnswer] = useState<string[]>([]);
   const [showTimerModal, setShowTimerModal] = useState<boolean>(false);
   const [showResultModal, setShowResultModal] = useState<boolean>(false);
-
+  const router = useRouter();
   const {
     questions,
     quizDetails,
@@ -43,7 +43,7 @@ const QuestionScreen: FC = () => {
       );
 
     const idx = result.findIndex(
-      (resultObj) => resultObj.question === currentQuestion.question
+      (resultObj) => resultObj.question === currentQuestion?.question
     );
     if (selectedAnswer.length > 0) {
       result[idx] = {
@@ -85,7 +85,7 @@ const QuestionScreen: FC = () => {
     : "Mark for Review";
 
   const handleModal = () => {
-    setCurrentScreen(ScreenTypes.ResultScreen);
+    router.push("/result");
     document.body.style.overflow = "auto";
   };
 
@@ -117,9 +117,9 @@ const QuestionScreen: FC = () => {
           timer={timer}
         />
         <Question
-          question={currentQuestion.question}
-          choices={currentQuestion.choices}
-          type={currentQuestion.type}
+          question={currentQuestion?.question}
+          choices={currentQuestion?.choices}
+          type={currentQuestion?.type}
           handleAnswerSelection={handleAnswerSelection}
           selectedAnswer={selectedAnswer}
         />
@@ -140,7 +140,7 @@ const QuestionScreen: FC = () => {
       {showTimerModal || showResultModal ? (
         <ModalWrapper
           title={showResultModal ? "Done!" : "Your time is up!"}
-          subtitle={`You have attempted ${attemptedQuestions.length} questions in total.`}
+          subtitle={`Total Questions Attempted: ${attemptedQuestions.length}`}
           onClick={handleModal}
           icon={showResultModal ? <CheckIcon /> : <AccessAlarmIcon />}
           buttonTitle="SHOW RESULT"

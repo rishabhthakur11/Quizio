@@ -25,7 +25,7 @@ const Question: FC<QuestionTypes> = ({
         {question}
       </h2>
       <div className="max-w-78% sm:max-w-full">
-        {choices.map((choice, index) => (
+        {choices?.map((choice, index) => (
           <Answer
             choice={choice}
             index={index}
