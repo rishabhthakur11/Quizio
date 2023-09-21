@@ -1,36 +1,78 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Quiz Application
+
+This is a simple quiz application built using React.js and TypeScript, utilizing the Context API. The application fetches quiz questions from the [Open Trivia Database API](https://opentdb.com/api.php?amount=15) and allows users to answer them. Below, you'll find information about the application's requirements, functionality, and features.
+
+## Objective
+
+Thank you for considering me for the FullStack Developer Intern position at CausalFunnel. As part of the evaluation process, I have completed the task assigned to me.
+
+## Features
+
+### Quiz Layout & Flow
+
+- The application starts with a welcome page where the user is prompted to submit their email address.
+
+- After submitting the email address, the user is presented with 15 quiz questions.
+
+- A timer is displayed at the top of the page, counting down from 30 minutes. The quiz auto-submits when the timer reaches zero.
+
+### Navigation
+
+- Users can navigate to a specific question within the quiz.
+
+- An overview panel or a similar element shows all questions, indicating:
+  - Questions the user has visited.
+  - Questions that have been attempted.
+
+### End of Quiz
+
+- After completing the quiz or when the timer runs out, users are directed to a report page.
+
+- The report page displays each question with the user's answer and the correct answer side by side or in an easily comparable format.
+
+### Data Source
+
+- Quiz questions are fetched from the [Open Trivia Database API](https://opentdb.com/api.php?amount=15).
+
+- The question displayed to the user is obtained from the `question` parameter of the API response.
+
+- Choices presented to the user for each question are generated from a concatenated array of `correct_answer` and `incorrect_answers` parameters.
+
+- The correct answer for each question is provided in the `correct_answer` parameter.
+
+## Challenges Faced
+
+Building the Overview Panel and Navigation:
+- One of the challenges faced during development was implementing the overview panel with question navigation. This required careful management of state and routing to ensure that users could easily move between questions.
+
+Building the Result Panel:
+- Another challenge was creating the result panel to display each question, the user's answer, and the correct answer side by side. Formatting and presenting this information in a clear and readable manner required thoughtful design and layout decisions.
 
 ## Getting Started
 
-First, run the development server:
+To run this application locally, follow these steps:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun run dev
-```
+1. Clone this repository to your local machine.
+2. Navigate to the project directory in your terminal.
+3. Run `npm install` to install the project dependencies.
+4. Run `npm start` to start the development server.
+5. Open your web browser and visit `http://localhost:3000` to access the application.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Technologies Used
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Next.js
+- TypeScript
+- Context API
+- Tailwind CSS (for styling)
+- Axios (for API requests)
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Acknowledgments
 
-## Learn More
+Special thanks to the Open Trivia Database for providing the quiz questions for this application.
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Screenshots
+![Alt text](/screenshots/Screenshot%202023-09-21%20at%2010.48.29%20PM.png)
+![Alt text](/screenshots/Screenshot%202023-09-21%20at%2010.49.24%20PM.png)
+![Alt text](/screenshots/Screenshot%202023-09-21%20at%2010.49.51%20PM.png)
+![Alt text](/screenshots/Screenshot%202023-09-21%20at%2010.50.42%20PM.png)
+![Alt text](/screenshots/Screenshot%202023-09-21%20at%2010.51.05%20PM.png)
