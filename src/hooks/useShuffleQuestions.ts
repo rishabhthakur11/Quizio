@@ -1,8 +1,9 @@
+"use client"
 import { useEffect } from 'react'
 
-import { useQuiz } from '../context/QuizContext'
+import { useQuiz } from '@/context/QuizContext'
 import { ScreenTypes } from '../types'
-import { shuffleArray } from '../utils/helpers'
+import { shuffleArray } from '@/utilities/helpers'
 
 export const useShuffleQuestions = () => {
   const { setQuestions, currentScreen, questions } = useQuiz()

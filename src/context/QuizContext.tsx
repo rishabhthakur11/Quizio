@@ -55,7 +55,7 @@ const QuizProvider = ({ children }: QuizProviderProps) => {
     initialState.currentScreen
   );
 
-  const [questions, setQuestions] = useState<any[]>([]);
+  const [questions, setQuestions] = useState<String[]>([]);
   const [attemptedQuestions, setAttemptedQuestions] = useState<number[]>([]);
   const [markedForReview, setMarkedForReview] = useState<number[]>([]);
   const [isChecked, setIsChecked] = useState<boolean>(false);

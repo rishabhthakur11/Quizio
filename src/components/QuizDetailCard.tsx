@@ -13,8 +13,9 @@ function QuizDetailCard({}: Props) {
   const { selectedQuizTopic, totalQuestions, totalScore, totalTime } =
     quizDetails;
   const goToQuestionScreen = () => {
-    router.push("/questions");
+    router.push("/question");
   };
+
   return (
     <div className="flex flex-col md:gap-8 gap-5 items-start  rounded-md shadow-lg">
       <Text className="inline-block max-w-max text-4xl text-center font-bold text-center bg-gradient-to-r from-[#7F7FD5] to-[#91EAE4] bg-clip-text text-transparent">
@@ -33,6 +34,7 @@ function QuizDetailCard({}: Props) {
         <Text variant="price" className="inline-block max-w-max">
           Total Time: {convertSeconds(totalTime)}
         </Text>
+        <Text variant="price" className="inline-block max-w-max"></Text>
       </div>
       <div className="mt-10">
         <Button

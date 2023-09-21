@@ -7,6 +7,7 @@ import SliderItem from "@/components/ui/SliderItem";
 import Heading from "@/components/ui/Heading";
 import Badge from "@/components/ui/Badge";
 import Loader from "@/components/ui/Loader";
+import ModalWrapper from "./ModelWrapper";
 export {
   Text,
   Button,
@@ -17,4 +18,5 @@ export {
   Heading,
   Badge,
   Loader,
+  ModalWrapper,
 };
